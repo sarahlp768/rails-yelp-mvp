@@ -1,0 +1,13 @@
+<h1>Reviews</h1>
+<div class="container text-center">
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :rating, error: 'Rating is mandatory, please specify one between 0-5', placeholder: 'Example: 2' %>
+  <%= f.input :content, error: 'Description is mandatory, please specify one', placeholder: 'Delicious!' %>
+  <%= f.button :submit, class: "btn btn-outline-primary btn-lg bold" %>
+<% end %>
+
+ <div class="d-flex justify-content-center mt-4 gap-3">
+    <%= link_to "Back to this restaurant list", restaurant_path(@restaurant), class: "btn btn-outline-success btn-lg" %>
+  </div>
+
+</div>

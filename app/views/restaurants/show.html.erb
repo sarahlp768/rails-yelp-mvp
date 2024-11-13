@@ -1,0 +1,29 @@
+<div class="container text-center">
+  <h2 class="my-4 text-success">
+    <strong><%= @restaurant.name%></strong>
+  </h2>
+
+  <p class="text-dark"><strong>Address:</strong> <%= @restaurant.address %></p>
+  <p class="text-dark"><strong>Phone number:</strong> <%= @restaurant.phone_number %></p>
+  <p class="text-dark"><strong>Category:</strong> <%= @restaurant.category %></p>
+
+  <% if @reviews.any? %>
+  <ul class="list-group">
+    <% @reviews.each do |review| %>
+      <li class="list-group-item">
+        <p><strong>Rating:</strong> <%= review.rating %> / 5</p>
+        <p><%= review.content %></p>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No reviews yet for this restaurant.</p>
+<% end %>
+
+  <% @reviews.all %>
+
+ <div class="d-flex justify-content-center mt-4 gap-3">
+    <%= link_to "Back to the restaurant list", restaurants_path, class: "btn btn-outline-success btn-lg" %>
+    <%= link_to "Add a review", new_restaurant_review_path(@restaurant), class: "btn btn-outline-success btn-lg" %>
+
+  </div>

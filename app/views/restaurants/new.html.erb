@@ -1,0 +1,17 @@
+<div class="container text-center">
+
+<%= simple_form_for @restaurant do |f| %>
+  <%= f.input :name, label: 'What is the name of the restaurant?', error: 'Name is mandatory, please specify one', placeholder: 'Example: Master Poulet' %>
+  <%= f.input :address, error: 'Address is mandatory, please specify one', placeholder: 'Example: 245 Oberkampf street' %>
+  <%= f.input :phone_number, placeholder: 'Example: 7503624953' %>
+  <%= f.input :category, error: 'Address is mandatory, please specify one', placeholder: 'Example: French' %>
+  <%= f.button :submit, class: "btn btn-outline-primary btn-lg bold" %>
+<% end %>
+
+
+
+ <div class="d-flex justify-content-center mt-4 gap-3">
+    <%= link_to "Back to the restaurant list", restaurants_path, class: "btn btn-outline-success btn-lg bold" %>
+  </div>
+
+</div>
